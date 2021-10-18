@@ -19,7 +19,6 @@ node *createNode(int data);
 
 node *add(node *head,int data);
 
-node *removelist(node *head,int index);
 
 node*binaryConventor(node*head,int input);
 
@@ -35,7 +34,7 @@ node *head=NULL;
 
 int number;
 
-printf("Lutfen binary sayiya cevirmek istediginiz sayiyi giriniz:");
+printf("Please enter the number you want to convert to binary:");
 scanf("%d",&number);
 
 reversePrint(binaryConventor(head,number));
@@ -75,32 +74,20 @@ node *add(node *head,int data){
     return head;  
 }
 
-node *removelist(node *head,int index){
-    
-    node *iter=head;
-    node *temp=NULL;
-    int i=0;
-    while(i++ < index)
-      iter=iter->next;
 
-    temp=iter->prev;
-    temp=iter->next;
-    free(iter);
- return head;
-}
 
 node* binaryConventor(node*head,int input){
-    int bolunen;
-    int kalan;
+    int dividing;
+    int remainder;
     
-       while(bolunen!=0){
+       while(dividing!=0){
 
-        bolunen = input / 2;
+        dividing = input / 2;
 
-        kalan = input % 2;
+        remainder= input % 2;
 
-        input = bolunen;
-       head = add(head,kalan);
+        input = dividing;
+       head = add(head,remainder);
     }    
 return head;
 }
