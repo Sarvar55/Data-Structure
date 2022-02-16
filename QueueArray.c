@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 typedef enum {false,true}boolean;
 
@@ -71,7 +72,7 @@ if(isFull(root))
    root->size++;
 }
 int dequeue(queue*root){
-if(isEmpty(root))return ;
+if(isEmpty(root))return INT_MIN;
 
 int deleteVal=root->array[root->front];
 //            (0+1)%10=1
